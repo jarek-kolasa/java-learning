@@ -16,36 +16,47 @@ public class ArrayOfInts {
 		tab = array();
 	}
 
-	public void everySecondElement() {
+	public int[] everySecondElement() {
+
+		int[] elements = new int[arraySize / 2];
+
 		for (int i = 0; i < tab.length; i++) {
 			if (i % 2 == 1) {
-				System.out.println(tab[i]);
+				elements[i / 2] = tab[i];
 			}
 		}
+		return elements;
 	}
-	
 
-	public void evenNumbers() {
+	public int[] evenNumbers() {
+
+		int[] elements = new int[arraySize / 2];
+
 		for (int i = 0; i < tab.length; i++) {
 			if (tab[i] % 2 == 0) {
-				System.out.println(tab[i]);
+				elements[i / 2] = tab[i];
 			}
 		}
+		return elements;
 	}
 
-	public void numbersDivisibleBy2And3() {
-		for (int i = 0; i < tab.length; i++) {
+	public int[] numbersDivisibleBy2And3() {
+
+		int[] elements = new int[arraySize / 6 + 1];
+
+		for (int i = 1; i < tab.length; i++) {
 			if (tab[i] % 6 == 0) {
-				System.out.println(tab[i]);
+				elements[i / 6] = tab[i];
 			}
 		}
+		return elements;
 	}
-	
+
 	public int[] primeNumbers() {
-		
+
 		return null;
 	}
-	
+
 	public int[] array() {
 
 		int[] array = new int[arraySize];
