@@ -99,6 +99,21 @@ public class ArrayOfInts {
 		return true;
 	}
 
+	public boolean numberDividedBy5(int i) {
+		
+		if (i < 5) {
+			return false;
+		}
+		
+		for (int j = 0; j < tab.length; j++) {
+			if (j % 5 == 0) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 	public int[] array() {
 
 		int[] array = new int[arraySize];
@@ -109,4 +124,31 @@ public class ArrayOfInts {
 
 		return array;
 	}
+
+	public int sumOddNumbers() {
+		
+		int counter = 0;
+		
+		for (int i = 0; i < tab.length; i++) {
+			if (tab[i] % 2 == 1) {
+				counter = counter + tab[i];
+			}
+		}
+		
+		return counter;
+	}
+
+	public int multiply5numbers() {
+
+		int multi = 1;
+		
+		for (int i = 1; i < tab.length; i++) {
+			if (i % 5 == 0) {
+				multi = multi * i;
+			}
+		}
+		
+		return multi;
+	}
+
 }

@@ -94,4 +94,35 @@ public class ArrayOfIntsTest {
 		assertEquals(0, tabTest.length);
 	}
 	
+	
+	@Test
+	public void oddNumbersSumTest() {
+		int input = 6;
+		ArrayOfInts tab = new ArrayOfInts(input);
+		assertEquals(9,tab.sumOddNumbers());
+	}
+	
+	@Test
+	public void numberThatInclude5ShouldGiveTrue() {
+		int input = 8;
+		ArrayOfInts tab = new ArrayOfInts(input);
+		assertTrue(tab.numberDividedBy5(input));
+	}
+	
+	@Test
+	public void numberLessThan5ShouldGiveFalse() {
+		int input = 3;
+		ArrayOfInts tab = new ArrayOfInts(input);
+		assertFalse(tab.numberDividedBy5(input));
+	}
+	
+	@Test
+	public void number13Gives50Test() {
+		int input = 13;
+		ArrayOfInts tab = new ArrayOfInts(input);
+		assertEquals(50,tab.multiply5numbers());
+	}
+	
+	
+	
 }
