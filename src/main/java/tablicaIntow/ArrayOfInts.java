@@ -45,7 +45,7 @@ public class ArrayOfInts {
 		int[] elements = new int[arraySize / 6 + 1];
 
 		for (int i = 1; i < tab.length; i++) {
-			if (tab[i] % 6 == 0) {
+			if (tab[i] % 6 == 0) {	
 				elements[i / 6] = tab[i];
 			}
 		}
@@ -53,8 +53,50 @@ public class ArrayOfInts {
 	}
 
 	public int[] primeNumbers() {
+		
+		int tabSize = 0;
+		
+		for (int i = 2; i < tab.length; i++) {
+				if(checkIsItPrime(i)) {
+					tabSize ++;
+				}
+		}
+		
+		int[] elements = new int[tabSize];
+		
+		int arrayPosition = 0;
 
-		return null;
+		for (int i = 2; i < tab.length; i++) {
+			if (checkIsItPrime(i)) {
+				elements[arrayPosition] = tab[i];
+				arrayPosition++;
+			}
+		}
+		
+		return elements;
+	}
+	
+	public boolean checkIsItPrime(int i) {
+		int divider = 0;
+		
+		if(i < 2) {
+			return false;
+		}
+		
+		for (int j = 1; j <= i; j++) {
+			if (i % j == 0) {
+				divider ++;
+			}
+			if(divider > 2) {
+				return false;
+			}
+		}
+		
+		if (divider < 2) {
+			return false;
+		}
+		
+		return true;
 	}
 
 	public int[] array() {
