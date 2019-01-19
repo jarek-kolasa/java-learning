@@ -129,6 +129,10 @@ public class ArrayOfInts {
 		
 		int counter = 0;
 		
+		if(tab.length == 0) {
+			return 0;
+		}
+		
 		for (int i = 0; i < tab.length; i++) {
 			if (tab[i] % 2 == 1) {
 				counter = counter + tab[i];
@@ -141,6 +145,10 @@ public class ArrayOfInts {
 	public int multiply5numbers() {
 
 		int multi = 1;
+		
+		if(tab.length == 0) {
+			return 0;
+		}
 		
 		for (int i = 1; i < tab.length; i++) {
 			if (i % 5 == 0) {
