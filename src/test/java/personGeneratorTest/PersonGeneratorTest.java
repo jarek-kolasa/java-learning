@@ -4,10 +4,15 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
+import personGenerator.Person;
 import personGenerator.PersonGenerator;
 import personGenerator.SexType;
 
+@RunWith(MockitoJUnitRunner.class)
 public class PersonGeneratorTest {
 
 	/**
@@ -18,26 +23,20 @@ public class PersonGeneratorTest {
 	 * (zaczynajace sie na samogloske/spogloske)
 	 */
 
-	private String[] name = { "A", "B", "C" };
-	private String[] surname = { "D", "E", "F" };
+	private String[] FemaleNames = { "A", "B", "C" };
+	private String[] MaleNames = { "D", "E", "F" };
+	private String[] FemaleSurnames = { "G", "H", "I" };
+	private String[] MaleSurnames = { "J", "K", "L" };
 
 	private SexType sex;
 
-	public SexType sexGenerator() {
-		return Math.random() > 0.5 ? sex.W : sex.M;
-	}
-
-	PersonGenerator person = new PersonGenerator(name[(int) Math.random() * 3], surname[(int) Math.random() * 3],
-			sexGenerator());
+	@Mock
+	Person person;
 
 	@Test
 	public void personCreatorNotNullTest() {
 		assertNotNull(person);
 	}
 
-	@Test
-	public void showPerson() {
-
-	}
 
 }
