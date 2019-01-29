@@ -11,46 +11,46 @@ import java.util.Random;
  */
 
 public class PersonGenerator {
-	private String[] femaleNames = { "A", "B", "C", "D" };
-	private String[] maleNames = { "E", "F", "G", "H" };
-	private String[] femaleSurnames = { "I", "J", "K", "L" };
-	private String[] maleSurnames = { "M", "N", "O", "P" };
-	private SexType sex;
-	private Person person;
+	public String[] femaleNames = { "A", "B", "C", "D" };
+	public String[] maleNames = { "E", "F", "G", "H" };
+	public String[] femaleSurnames = { "I", "J", "K", "L" };
+	public String[] maleSurnames = { "M", "N", "O", "P" };
 
 	Random random = new Random();
 
+	/*
 	public Person introduceYourself() {
 		sex = sexGenerator();
 		return new Person(nameGenerator(sex), surnameGenerator(sex), sex);
 	}
+	*/
 
-	private SexType sexGenerator() {
-		return random.nextBoolean() == true ? sex.W : sex.M;
+	public SexType sexGenerator() {
+		return random.nextBoolean() == true ? SexType.W : SexType.M;
 	}
 
-	private String nameGenerator(SexType sex) {
+	public String nameGenerator(SexType sex) {
 
 		return sex == SexType.W ? getFemaleName() : getMaleName();
 	}
 
-	private String surnameGenerator(SexType sex) {
+	public String surnameGenerator(SexType sex) {
 		return sex == SexType.W ? getFemaleSurname() : getMaleSurname();
 	}
 
-	public String getFemaleName() {
+	private String getFemaleName() {
 		return femaleNames[random.nextInt(femaleNames.length)];
 	}
 
-	public String getMaleName() {
+	private String getMaleName() {
 		return maleNames[random.nextInt(maleNames.length)];
 	}
 
-	public String getFemaleSurname() {
+	private String getFemaleSurname() {
 		return femaleSurnames[random.nextInt(femaleSurnames.length)];
 	}
 
-	public String getMaleSurname() {
+	private String getMaleSurname() {
 		return maleSurnames[random.nextInt(maleSurnames.length)];
 	}
 
