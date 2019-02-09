@@ -7,8 +7,6 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import personGenerator.Person;
@@ -68,13 +66,14 @@ public class PersonGeneratorTest {
 		when(sexType.sexGenerator()).thenReturn(SexType.M);
 	}
 
-	 @Test public void check_personData() { 
-		 // given
-	  List<Person> listOfPerson = new ArrayList<Person>();
-	  listOfPerson.add(personGenerator.generatePerson());
-	  listOfPerson.add(personGenerator.generatePerson());
-	  
-	  when(personData.personList()).thenReturn(listOfPerson);
-	  }
+	@Test
+	public void check_personData() {
+		// given
+		List<Person> listOfPerson = new ArrayList<Person>();
+		listOfPerson.add(personGenerator.generatePerson());
+		listOfPerson.add(personGenerator.generatePerson());
+
+		when(personData.personList()).thenReturn(listOfPerson);
+	}
 
 }
