@@ -1,10 +1,12 @@
 package algorithmsTest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
+import org.junit.Before;
 import org.junit.Test;
 
-import algorithms.MiddlePiont;
+import algorithms.MiddlePoint;
 
 /**
  * Znajdz tzw punkt srodkowy tablicy
@@ -21,10 +23,40 @@ import algorithms.MiddlePiont;
 
 public class MiddlePointTest {
 
+	MiddlePoint middlePoint;
+	
+	@Before
+	public void setUp() throws Exception {
+		middlePoint = new MiddlePoint();
+	}
+	
 	@Test
 	public void checkTabFromExample() {
 		int [] tab = new int [] {1, 2, 3, 6};
-		assertEquals(2,MiddlePiont.checkMiddlePoint(tab));
+		assertEquals(2, middlePoint.checkMiddlePoint(tab));
 	}
 	
+	@Test(expected = NullPointerException.class)
+	public void tabIsNullTest() {
+		int [] tab = null;
+		assertNull(middlePoint.checkMiddlePoint(tab));
+	}
+	
+	@Test
+	public void arrayShouldReturn3Test() {
+		int [] tab = new int [] {1, 2, 3, 6, 7, 5};
+		assertEquals(3, middlePoint.checkMiddlePoint(tab));
+	}
+	
+	@Test
+	public void arrayContainingMinusValuesShouldReturn3Test() {
+		int [] tab = new int [] {1, -2, -3, 6, 7, -5};
+		assertEquals(3, middlePoint.checkMiddlePoint(tab));
+	}
+	
+	@Test
+	public void arrayShouldReturnMinus1Test() {
+		int [] tab = new int [] {1, 2, -3, 6, 7, -5};
+		assertEquals(-1, middlePoint.checkMiddlePoint(tab));
+	}
 }
